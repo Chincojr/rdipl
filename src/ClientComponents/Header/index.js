@@ -4,8 +4,8 @@ import { MdOutlineClose } from 'react-icons/md'
 import { VscThreeBars } from 'react-icons/vsc'
 import companyNavLogo from '../../assests/companyNavLogo.png'
 import './index.css'
-import Lottie from 'react-lottie';
-import * as animationData from '../../assests/Animation.json'
+// import Lottie from 'react-lottie';
+// import * as animationData from '../../assests/Animation.json'
 
 
 
@@ -31,31 +31,24 @@ class Header extends Component {
     }
 
     componentDidMount() {
-        let loader = document.getElementById("preloader")
-        setTimeout(() => {
-            console.log("this is the first message");
+        window.onload = () => {
+            let loader = document.getElementById("preloader")
+            console.log({loader});
             loader.style.display = "none"
-          }, 1);
+            console.log("this is the first message");
+            console.log('some thing');
+        }
     }
 
     render() {
         const { isSideBarOpen, sideBarDisplay } = this.state
 
-        const defaultOptions = {
-            loop: true,
-            autoplay: true, 
-            animationData: animationData,
-            rendererSettings: {
-              preserveAspectRatio: 'xMidYMid slice'
-            }
-          };
-
-
         return (
             <>
                 <div  id="preloader" class="preloader" >
-                    <div class="loader">
-                        <Lottie options={defaultOptions}  />
+                    <div class="waviy">
+                        <span id="r" style={{ '--i': 1 }}>R</span>
+                        <span id="d" style={{ '--i': 2 }}>D</span>
                     </div>
                 </div>
                 <>
