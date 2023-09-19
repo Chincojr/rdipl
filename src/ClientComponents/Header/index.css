@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Kalam&family=Libre+Baskerville:wght@400;700&family=Satisfy&family=Ysabeau+Office:wght@300;400;600&display=swap');
 
+body{
+    overflow:hiden;
+}
+
 .preloader {
     position: fixed;
     top: 0;
@@ -13,6 +17,47 @@
     z-index: 9999;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.waviy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    width:270px;
+}
+.waviy span {
+    font-family: 'Montserrat';
+    position: relative;
+    display: inline-block;
+    color: #2ca3d4;
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+
+}
+@keyframes waviy {
+    0%,40%,100% {
+        transform: translateY(0)
+    }
+    20% {
+        transform: translateY(-20px)
+    }
+}
+
+#r{
+    font-size: 20rem;
+    color: #4f9cbd;
+
+}
+
+#d{
+    font-size: 16.5rem;
+    color: #21244b;
+    position: absolute;
+    bottom: 14px;
+    left: 20%;
+    z-index: -1;
+
+}
 
 
 .mobile-navbar {
