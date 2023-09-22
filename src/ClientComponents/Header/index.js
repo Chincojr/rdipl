@@ -4,8 +4,7 @@ import { MdOutlineClose } from 'react-icons/md'
 import { VscThreeBars } from 'react-icons/vsc'
 import companyNavLogo from '../../assests/companyNavLogo.png'
 import './index.css'
-// import Lottie from 'react-lottie';
-// import * as animationData from '../../assests/Animation.json'
+
 
 
 
@@ -19,7 +18,9 @@ export const navbarMenu = [
 
 
 class Header extends Component {
-    state = { isSideBarOpen: false, sideBarDisplay: false }
+    state = {
+        isSideBarOpen: false, sideBarDisplay: false, imagesLoaded: 0,
+    }
 
     onClickNavThreeLine = () => {
         this.setState({ isSideBarOpen: true, sideBarDisplay: true })
@@ -30,14 +31,18 @@ class Header extends Component {
         setTimeout(() => { this.setState({ sideBarDisplay: false, mobileSubMenu: false }) }, 500)
     }
 
+
+
     componentDidMount() {
-        window.onload = () => {
+
+        setTimeout(() => {
             let loader = document.getElementById("preloader")
-            console.log({loader});
+            console.log({ loader });
             loader.style.display = "none"
             console.log("this is the first message");
             console.log('some thing');
-        }
+        }, 10000);
+
     }
 
     render() {
@@ -45,7 +50,7 @@ class Header extends Component {
 
         return (
             <>
-                <div  id="preloader" class="preloader" >
+                <div id="preloader" class="preloader" >
                     <div class="waviy">
                         <span id="r" style={{ '--i': 1 }}>R</span>
                         <span id="d" style={{ '--i': 2 }}>D</span>
