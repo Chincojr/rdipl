@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Chakra+Petch:wght@400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Montserrat:wght@400;500&family=Nanum+Myeongjo:wght@400;700&family=Satisfy&display=swap');
 
 
-/* ${carousel.carouselImageClass} */
-
 .home-carousel-main{
     display:grid;
     grid-template-columns: 100% 100% 100%;
@@ -26,10 +24,16 @@
 
 .carousel-image-2 {
     background-image: url("../../assests/mobileCarousel2.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
 }
 
 .carousel-image-3 {
     background-image: url("../../assests/mobileCarousel3.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
 }
 
 .carousel-element-container {
@@ -92,7 +96,7 @@
     line-height: 20px;
     color: #ffffff;
     width: 100%;
-    animation: carousel-paragraph-transition 5s linear 0s infinite normal none;
+    animation: carousel-paragraph-transition 7s linear 0s infinite normal none;
     padding-bottom: 20px;
     font-size: 1.125rem;
     text-align:left;
