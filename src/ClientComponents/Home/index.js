@@ -37,7 +37,7 @@ class Home extends Component {
 
     componentDidMount = () => {
         setInterval(this.changeCarouselRight, 7000)
-        setInterval(this.handleStable, 1000)
+        // setInterval(this.handleStable, 1000)
 
         
         let countEls = document.querySelectorAll('[name*="count"]');
