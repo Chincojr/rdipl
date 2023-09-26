@@ -32,13 +32,11 @@ class Home extends Component {
         fourthSecSecondCount:0,
         fourthSecThirdCount:0,
         fourthSecFourthCount:0,
-    }, scrolled:false }
+    },  }
 
 
     componentDidMount = () => {
-        setInterval(this.changeCarouselRight, 7000)
-        setInterval(this.handleStable, 1000)
-
+        setInterval(this.changeCarouselRight, 5000)
         
         let countEls = document.querySelectorAll('[name*="count"]');
 
@@ -107,16 +105,10 @@ class Home extends Component {
     }
 
     changeCarouselRight = () => {
-
-        if (this.state.scrolled == false) {
-            console.log('moving carousel', this.state.scrolled);
-            this.setState(prevState => ({ 
-                currentCarouselIndex: prevState.currentCarouselIndex < carouselList.length && carouselState
-                ? prevState.currentCarouselIndex + 1 
-                : prevState.currentCarouselIndex - 1  }))
-        }
-
-
+        this.setState(prevState => ({ 
+            currentCarouselIndex: prevState.currentCarouselIndex < carouselList.length && carouselState
+            ? prevState.currentCarouselIndex + 1 
+            : prevState.currentCarouselIndex - 1  }))
     }
 
     handleSubChange = (val) => {
@@ -124,28 +116,12 @@ class Home extends Component {
     }
 
 
-    handleStable = () =>{
-        let allMovables = document.querySelectorAll('.movables')
-
-        for (let i = 0; i < allMovables.length; i++) {
-            let el = allMovables[i];
-            let rect = el.getBoundingClientRect();
-            let lastHeight =  Number(el.getAttribute('scroll'))
-            console.log('elemtnt top distancne', rect.top, );
-            if (rect.top !== lastHeight) {
-                console.log('scrolled');
-                this.state.scrolled = true
-            }else{
-                console.log('not scrolled');
-                this.state.scrolled = false
-            }
-            el.setAttribute("scroll",`${rect.top}`)
-        }
+    handleRemove = () =>{
 
     }
 
     render() {
-        const { currentCarouselIndex, isActive,animateAndCount, scrolled } = this.state
+        const { currentCarouselIndex, isActive,animateAndCount } = this.state
 
         if(currentCarouselIndex == carouselList.length - 1){
             carouselState = false
@@ -158,25 +134,19 @@ class Home extends Component {
         const specificClass = isActive == 2 ? 'sixth-sub-section' : 'sixth-sub-section sixth-sub-section-bg ';
         const reviewsClass = isActive == 3 ? 'sixth-sub-section' : 'sixth-sub-section sixth-sub-section-bg ';
 
-        const moveClass = scrolled ? carouselList[currentCarouselIndex].carouselImageClass:"";
-        const nonMoveClass = !scrolled ? carouselList[currentCarouselIndex].carouselImageClass:"";
-
-
         return (
             <>
                 <Header />
-                <div className={`home-carousel-main  ${moveClass}  `}>
+                <div className={`home-carousel-main    `}>
                     {
                         carouselList.map((carousel)=>{
                             return (
                                 <>
-                                    <div className={`home-carousel-main-container movables ${ !scrolled ? carousel.carouselImageClass : ""}`}
+                                    <div className={`home-carousel-main-container  ${carousel.carouselImageClass}` } 
                                       style={{
                                         transform: `translate(-${currentCarouselIndex * 100}%)`,
                                         transition: 'transform 1s ease-in-out',
                                       }}
-                                      scroll = "0"
-
                                      >
                                         <div className="carousel-element-container">
                                             <div className="carousel-header-and-paragraph-container">
