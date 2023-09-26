@@ -5,13 +5,13 @@ import './index.css'
 
 const carouselList = [
     {
-        id: 1, carouselImageClass: "carousel-image-1", heading: "PURSUIN EXCELLENCE", paragraph: "We are driven by a relentless pursuit of excellence, continuously exceeding expectations, pushing boundaries, and fostering innovation."
+        id: 1, carouselImageClass: "carousel-image-1", heading: "PURSUING EXCELLENCE", paragraph: "We are driven by a relentless pursuit of excellence, continuously exceeding expectations, pushing boundaries, and fostering innovation."
     },
     {
-        id: 2, carouselImageClass: "carousel-image-2", heading: "CONQUE CHALLENGES", paragraph: "We fearlessly conquer challenges with a relentless spirit and commitment to excellence."
+        id: 2, carouselImageClass: "carousel-image-2", heading: "CONQUER CHALLENGES", paragraph: "We fearlessly conquer challenges with a relentless spirit and commitment to excellence."
     },
     {
-        id: 3, carouselImageClass: "carousel-image-3", heading: "CREATIN A SUSTAINALBE WORLD", paragraph: "Through water management, renewable energy generation, and maintaining infrastructure for our future communities."
+        id: 3, carouselImageClass: "carousel-image-3", heading: "CREATING A SUSTAINALBE WORLD", paragraph: "Through water management, renewable energy generation, and maintaining infrastructure for our future communities."
     },
 ]
 
@@ -37,7 +37,7 @@ class Home extends Component {
 
     componentDidMount = () => {
         setInterval(this.changeCarouselRight, 7000)
-        // setInterval(this.handleStable, 1000)
+        setInterval(this.handleStable, 1000)
 
         
         let countEls = document.querySelectorAll('[name*="count"]');
@@ -108,13 +108,13 @@ class Home extends Component {
 
     changeCarouselRight = () => {
 
-        // if (this.state.scrolled == false) {
+        if (this.state.scrolled == false) {
             console.log('moving carousel', this.state.scrolled);
             this.setState(prevState => ({ 
                 currentCarouselIndex: prevState.currentCarouselIndex < carouselList.length && carouselState
                 ? prevState.currentCarouselIndex + 1 
                 : prevState.currentCarouselIndex - 1  }))
-        // }
+        }
 
 
     }
@@ -162,17 +162,15 @@ class Home extends Component {
         const nonMoveClass = !scrolled ? carouselList[currentCarouselIndex].carouselImageClass:"";
 
 
-        // ${ !scrolled ? carousel.carouselImageClass : ""}        
-
         return (
             <>
                 <Header />
-                <div className={`home-carousel-main    `}>
+                <div className={`home-carousel-main  ${moveClass}  `}>
                     {
                         carouselList.map((carousel)=>{
                             return (
                                 <>
-                                    <div className={`home-carousel-main-container movables ${ carousel.carouselImageClass}  `}
+                                    <div className={`home-carousel-main-container movables ${ !scrolled ? carousel.carouselImageClass : ""}`}
                                       style={{
                                         transform: `translate(-${currentCarouselIndex * 100}%)`,
                                         transition: 'transform 1s ease-in-out',
