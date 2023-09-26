@@ -57,7 +57,7 @@
     width: 100%;
     max-width: 200%;
     height: 100%;
-    background-color: #00000080;
+    background-color: #00000097;
     padding: 0 10% 0 10%;
 }
 
@@ -96,7 +96,7 @@
     line-height: 20px;
     color: #ffffff;
     width: 100%;
-    animation: carousel-paragraph-transition 7s linear 0s infinite normal none;
+    animation: carousel-paragraph-transition 5s linear 0s infinite normal none;
     padding-bottom: 20px;
     font-size: 1.125rem;
     text-align:left;
