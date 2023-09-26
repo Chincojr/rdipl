@@ -108,13 +108,13 @@ class Home extends Component {
 
     changeCarouselRight = () => {
 
-        if (this.state.scrolled == false) {
+        // if (this.state.scrolled == false) {
             console.log('moving carousel', this.state.scrolled);
             this.setState(prevState => ({ 
                 currentCarouselIndex: prevState.currentCarouselIndex < carouselList.length && carouselState
                 ? prevState.currentCarouselIndex + 1 
                 : prevState.currentCarouselIndex - 1  }))
-        }
+        // }
 
 
     }
