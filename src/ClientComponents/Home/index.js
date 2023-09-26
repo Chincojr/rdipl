@@ -5,7 +5,7 @@ import './index.css'
 
 const carouselList = [
     {
-        id: 1, carouselImageClass: "carousel-image-1", heading: "PURSUING EXCELLENCE", paragraph: "We are driven by a relentless pursuit of excellence, continuously exceeding expectations, pushing boundaries, and fostering innovation."
+        id: 1, carouselImageClass: "carousel-image-1", heading: "PURSUIN EXCELLENCE", paragraph: "We are driven by a relentless pursuit of excellence, continuously exceeding expectations, pushing boundaries, and fostering innovation."
     },
     {
         id: 2, carouselImageClass: "carousel-image-2", heading: "CONQUER CHALLENGES", paragraph: "We fearlessly conquer challenges with a relentless spirit and commitment to excellence."
@@ -162,6 +162,8 @@ class Home extends Component {
         const nonMoveClass = !scrolled ? carouselList[currentCarouselIndex].carouselImageClass:"";
 
 
+        // ${ !scrolled ? carousel.carouselImageClass : ""}        
+
         return (
             <>
                 <Header />
@@ -170,7 +172,7 @@ class Home extends Component {
                         carouselList.map((carousel)=>{
                             return (
                                 <>
-                                    <div className={`home-carousel-main-container movables ${ !scrolled ? carousel.carouselImageClass : ""}`}
+                                    <div className={`home-carousel-main-container movables ${ carousel.carouselImageClass}  `}
                                       style={{
                                         transform: `translate(-${currentCarouselIndex * 100}%)`,
                                         transition: 'transform 1s ease-in-out',
