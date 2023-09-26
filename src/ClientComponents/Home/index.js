@@ -8,10 +8,10 @@ const carouselList = [
         id: 1, carouselImageClass: "carousel-image-1", heading: "PURSUIN EXCELLENCE", paragraph: "We are driven by a relentless pursuit of excellence, continuously exceeding expectations, pushing boundaries, and fostering innovation."
     },
     {
-        id: 2, carouselImageClass: "carousel-image-2", heading: "CONQUER CHALLENGES", paragraph: "We fearlessly conquer challenges with a relentless spirit and commitment to excellence."
+        id: 2, carouselImageClass: "carousel-image-2", heading: "CONQUE CHALLENGES", paragraph: "We fearlessly conquer challenges with a relentless spirit and commitment to excellence."
     },
     {
-        id: 3, carouselImageClass: "carousel-image-3", heading: "CREATING A SUSTAINALBE WORLD", paragraph: "Through water management, renewable energy generation, and maintaining infrastructure for our future communities."
+        id: 3, carouselImageClass: "carousel-image-3", heading: "CREATIN A SUSTAINALBE WORLD", paragraph: "Through water management, renewable energy generation, and maintaining infrastructure for our future communities."
     },
 ]
 
@@ -167,7 +167,7 @@ class Home extends Component {
         return (
             <>
                 <Header />
-                <div className={`home-carousel-main  ${moveClass}  `}>
+                <div className={`home-carousel-main    `}>
                     {
                         carouselList.map((carousel)=>{
                             return (
