@@ -36,6 +36,7 @@
     background-attachment: fixed;
 }
 
+
 .carousel-element-container {
     height: 100vh;
     position: absolute;
@@ -57,7 +58,7 @@
     width: 100%;
     max-width: 200%;
     height: 100%;
-    background-color: #00000097;
+    background-color: #00000080;
     padding: 0 10% 0 10%;
 }
 
@@ -555,6 +556,28 @@
 }
 
 @media (min-width: 768px){
+
+    .carousel-image-1 {
+        background-image: url("../../assests/carousel1.jpg");
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+    }
+    
+    .carousel-image-2 {
+        background-image: url("../../assests/carousel2.jpg");
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+    }
+    
+    .carousel-image-3 {
+        background-image: url("../../assests/carousel3.jpg");
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+    }
+
     .carousel-heading {
         font-size: 2.75rem;
     }
